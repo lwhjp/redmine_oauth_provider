@@ -34,7 +34,7 @@ class CreateOauthTables < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :oauth_nonces,[:nonce, :timestamp], :unique
+    add_index :oauth_nonces,[:nonce, :timestamp], :unique => true
 
   end
 
