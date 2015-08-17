@@ -1,5 +1,5 @@
 # English strings go here for Rails i18n
-en:
+zh:
   oauth_allow: "允許"
   oauth_deny: "拒絕"
   oauth_authorize_tilte:  帳號存取驗證
