@@ -18,9 +18,7 @@ class OauthController < ApplicationController
     user_hash = { :user => {} }
     user = User.find(session[:user_id])
     if user
-      hash = user.attributes
-      hash.delete(:hashed_password)
-      hash.delete(:salt)
+      hash = user.attributes.except("hashed_password", "salt")
       hash.merge!(:mail => user.mail)
       user_hash = { :user => hash }
     end
