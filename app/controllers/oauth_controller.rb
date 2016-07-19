@@ -20,6 +20,7 @@ class OauthController < ApplicationController
     if user
       hash = user.attributes.except("hashed_password", "salt")
       hash.merge!(:mail => user.mail)
+      hash.merge!(:api_token => user.api_token.value) if user.api_token
       user_hash = { :user => hash }
     end
     respond_to do |format|
